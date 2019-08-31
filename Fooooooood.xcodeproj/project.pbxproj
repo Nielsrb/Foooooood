@@ -16,6 +16,7 @@
 		46D505D9231AF588000CA5E5 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D505D8231AF588000CA5E5 /* ListView.swift */; };
 		46D505DC231AF9F3000CA5E5 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D505DB231AF9F3000CA5E5 /* FoodModel.swift */; };
 		46D505DF231AFC4E000CA5E5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D505DE231AFC4E000CA5E5 /* Router.swift */; };
+		46D505E4231B13CC000CA5E5 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D505E3231B13CC000CA5E5 /* DishView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		46D505D8231AF588000CA5E5 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		46D505DB231AF9F3000CA5E5 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
 		46D505DE231AFC4E000CA5E5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		46D505E3231B13CC000CA5E5 /* DishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,9 @@
 		46D505D6231AF563000CA5E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46D505D7231AF578000CA5E5 /* ListView */,
 				46D505C6231AF530000CA5E5 /* ContentView.swift */,
+				46D505E2231B13A6000CA5E5 /* DishView */,
+				46D505D7231AF578000CA5E5 /* ListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +117,14 @@
 				46D505DE231AFC4E000CA5E5 /* Router.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		46D505E2231B13A6000CA5E5 /* DishView */ = {
+			isa = PBXGroup;
+			children = (
+				46D505E3231B13CC000CA5E5 /* DishView.swift */,
+			);
+			path = DishView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				46D505C3231AF530000CA5E5 /* AppDelegate.swift in Sources */,
 				46D505C5231AF530000CA5E5 /* SceneDelegate.swift in Sources */,
 				46D505DF231AFC4E000CA5E5 /* Router.swift in Sources */,
+				46D505E4231B13CC000CA5E5 /* DishView.swift in Sources */,
 				46D505C7231AF530000CA5E5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

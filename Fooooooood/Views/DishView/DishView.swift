@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DishView.swift
 //  Fooooooood
 //
 //  Created by Niels Beeuwkes on 31/08/2019.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DishView: View {
     var body: some View {
-        ListView()
+        Text("kip")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DishView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DishView()
     }
 }

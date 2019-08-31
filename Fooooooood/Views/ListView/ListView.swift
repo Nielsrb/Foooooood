@@ -31,8 +31,8 @@ struct ListView: View {
                     .onAppear(perform: onLoad)
                 ListViewList(data: $data)
             }
+            .navigationBarTitle("List")
         }
-        .navigationBarTitle("List")
         .padding()
     }
 }
@@ -59,7 +59,7 @@ struct ListViewList: View {
     
     var body: some View {
         List(data) { food in
-            Button(action:  { print("hoi") }) {
+            NavigationLink(destination: DishView()) {
                 Text(food.name)
             }
         }
