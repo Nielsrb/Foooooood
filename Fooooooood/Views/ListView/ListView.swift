@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ListView: View {
     @State var search: String = ""
-    @State var data: [FoodModel] = [FoodModel(name: "Sate", id: 0), FoodModel(name: "Ramen", id: 1), FoodModel(name: "Hamburger", id: 2)]
+    @State var data: [FoodModel] = []
     
     public func onLoad() {
         Router.getAllData(completion: { data in
@@ -27,9 +27,9 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ListViewHeader(search: $search, data: $data, onSearch: onSearch)
+                ListViewHeader(search: $search, onSearch: onSearch)
                     .onAppear(perform: onLoad)
-                Spacer()
+                ListViewList(data: $data)
             }
         }
         .navigationBarTitle("List")
@@ -39,15 +39,19 @@ struct ListView: View {
 
 struct ListViewHeader: View {
     @Binding var search: String
-    @Binding var data: [FoodModel]
     var onSearch: () -> ()
     
     var body: some View {
-        VStack {
-            TextField("Search...", text: $search, onCommit: onSearch)
-            List(data) { food in
-                Text(food.name)
-            }
+        TextField("Search...", text: $search, onCommit: onSearch)
+    }
+}
+
+struct ListViewList: View {
+    @Binding var data: [FoodModel]
+    
+    var body: some View {
+        List(data) { food in
+            Text(food.name)
         }
     }
 }
