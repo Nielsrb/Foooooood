@@ -9,13 +9,26 @@
 import SwiftUI
 
 struct DishView: View {
+    @State var data: FoodModel?
+    var id: Int
+    
+    func onLoad() {
+        Router.getDataFor(id: id, completion: { data in
+            if let data = data {
+                self.data = data
+            }
+        })
+    }
+    
     var body: some View {
-        Text("kip")
+        VStack {
+            Text(data?.name ?? "Loading...").onAppear(perform: onLoad)
+        }
     }
 }
 
 struct DishView_Previews: PreviewProvider {
     static var previews: some View {
-        DishView()
+        DishView(id: 0)
     }
 }

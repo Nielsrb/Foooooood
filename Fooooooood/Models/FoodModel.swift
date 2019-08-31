@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct FoodModel: Identifiable {
-    let name: String
+struct FoodModel: Identifiable, Codable {
     let id: Int
+    let name: String
+    let description: String
+    let ingredients: String
 }

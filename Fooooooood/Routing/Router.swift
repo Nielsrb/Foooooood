@@ -12,16 +12,20 @@ import Foundation
 final class Router {
     
     private static let food = [
-        FoodModel(name: "Hamburger", id: 0),
-        FoodModel(name: "Kaasbal", id: 1),
-        FoodModel(name: "Gehaktbal", id: 2),
-        FoodModel(name: "Appelmoes", id: 3)
+        FoodModel(id: 0, name: "Hamburger", description: "", ingredients: ""),
+        FoodModel(id: 1, name: "Kaasbal", description: "", ingredients: ""),
+        FoodModel(id: 2, name: "Gehaktbal", description: "", ingredients: ""),
+        FoodModel(id: 3, name: "Appelmoes", description: "", ingredients: "")
     ]
     
     static let shared = Router()
     
     static func getAllData(completion: ([FoodModel]) -> ()) {
         completion(food)
+    }
+    
+    static func getDataFor(id: Int, completion: (FoodModel?) -> ()) {
+        completion(food.first(where: { $0.id == id }))
     }
     
     static func onSearch(search: String, completion: ([FoodModel]) -> ()) {

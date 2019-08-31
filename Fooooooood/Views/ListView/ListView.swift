@@ -50,7 +50,9 @@ struct ListViewHeader: View {
                 Image(systemName: "plus")
                     .imageScale(.large)
             }.padding(.trailing, 10)
-        }.border(Color.gray)
+        }
+        .cornerRadius(10)
+        .border(Color.gray)
     }
 }
 
@@ -59,7 +61,7 @@ struct ListViewList: View {
     
     var body: some View {
         List(data) { food in
-            NavigationLink(destination: DishView()) {
+            NavigationLink(destination: DishView(id: food.id)) {
                 Text(food.name)
             }
         }
