@@ -42,7 +42,15 @@ struct ListViewHeader: View {
     var onSearch: () -> ()
     
     var body: some View {
-        TextField("Search...", text: $search, onCommit: onSearch)
+        HStack {
+            TextField("Search...", text: $search, onCommit: onSearch)
+                .frame(height: 50)
+                .padding(.leading, 10)
+            Button(action: { print("kip") }) {
+                Image(systemName: "plus")
+                    .imageScale(.large)
+            }.padding(.trailing, 10)
+        }.border(Color.gray)
     }
 }
 
@@ -51,7 +59,9 @@ struct ListViewList: View {
     
     var body: some View {
         List(data) { food in
-            Text(food.name)
+            Button(action:  { print("hoi") }) {
+                Text(food.name)
+            }
         }
     }
 }
