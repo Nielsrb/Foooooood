@@ -12,14 +12,23 @@ struct ListView: View {
     @State var search: String = ""
     @State var data: [FoodModel] = [FoodModel(name: "Sate", id: 0), FoodModel(name: "Ramen", id: 1), FoodModel(name: "Hamburger", id: 2)]
     
+    public func onLoad() {
+        Router.getAllData(completion: { data in
+            self.data = data
+        })
+    }
+    
     public func onSearch() {
-        print(search)
+        Router.onSearch(search: search, completion: { data in
+            self.data = data
+        })
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 ListViewHeader(search: $search, data: $data, onSearch: onSearch)
+                    .onAppear(perform: onLoad)
                 Spacer()
             }
         }
